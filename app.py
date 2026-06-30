@@ -329,13 +329,13 @@ with tabs[3]:
     else:
         st.info("Install streamlit-agraph for interactive network graph.")
     st.dataframe(graph_df, use_container_width=True, hide_index=True)
-    st.plotly_chart(workflow_sankey(), use_container_width=True)
+    st.plotly_chart(workflow_sankey(), use_container_width=True, key="workflow_sankey_chain_graph")
 
 with tabs[4]:
     st.markdown('<span class="module-badge">MODULE 5</span>  Unknown Protein Finder', unsafe_allow_html=True)
     st.write("Rank candidate proteins by profile-HMM evidence, side-chain density support, model confidence, and biological plausibility.")
     st.dataframe(hits_df, use_container_width=True, hide_index=True)
-    st.plotly_chart(protein_id_evidence_plot(hits_df), use_container_width=True)
+    st.plotly_chart(protein_id_evidence_plot(hits_df), use_container_width=True, key="protein_id_evidence_main")
     fig = px.scatter(
         hits_df, x="side_chain_support", y="hmm_score", size="combined_score",
         color="evidence_class", hover_name="candidate_gene",
@@ -411,8 +411,8 @@ with tabs[9]:
     st.write("Generate manuscript-style figures and panels for a structural-biology report.")
     fc1, fc2 = st.columns(2)
     with fc1:
-        st.plotly_chart(workflow_sankey(), use_container_width=True)
-        st.plotly_chart(protein_id_evidence_plot(hits_df), use_container_width=True)
+        st.plotly_chart(workflow_sankey(), use_container_width=True, key="workflow_sankey_publication")
+        st.plotly_chart(protein_id_evidence_plot(hits_df), use_container_width=True, key="protein_id_evidence_publication")
     with fc2:
         fig = px.imshow(
             residue_df.pivot_table(index="chain", columns="residue_index", values="confidence", aggfunc="mean").fillna(0),
