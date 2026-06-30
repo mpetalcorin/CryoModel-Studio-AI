@@ -1,10 +1,11 @@
 
+
 # CryoModel Studio AI
 
 **An explainable AI workspace for cryo-EM map enhancement, atomic model building, protein identification, and structure validation.**
 
 CryoModel Studio AI is a visually guided structural-biology app inspired by ModelAngelo-style multimodal model building. It is designed as a portfolio-ready prototype that can run immediately in demo mode and can later be connected to real cryo-EM engines.
-
+<img width="1536" height="1024" alt="CryoModel Studio AI" src="https://github.com/user-attachments/assets/9e1f2299-7a73-4560-96b2-e2584b9afece" />
 ## New enhanced modules
 
 1. **Map Doctor**: map quality, local resolution, density classification, and recommended actions.
